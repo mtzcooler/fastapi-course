@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from typing import Optional
 
@@ -25,3 +26,7 @@ def show(id: int):
 @app.get('/blog/{id}/comments')
 def comments(id: int):
     return {"data": {'Comment A', 'Comment B'}}
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='127.0.0.1', port=9000)
