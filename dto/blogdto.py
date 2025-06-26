@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 
-class Blog(BaseModel):
+class BlogDTO(BaseModel):
     title: str
     body: str
     published: Optional[bool]
