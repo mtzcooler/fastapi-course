@@ -27,7 +27,7 @@ def index(db: Session = Depends(get_db)):
     return blogs
 
 
-@app.get('/blog/{id}', status_code=status.HTTP_200_OK)
+@app.get('/blog/{id}', status_code=status.HTTP_200_OK, response_model=BlogDTO)
 def show(id: int, db: Session = Depends(get_db)):
     blog = db.query(Blog).filter(Blog.id == id).first()
     if not blog:
